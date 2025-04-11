@@ -10,7 +10,8 @@ class Ship:
         self.settings = ai_game.settings
 
         # Load the ship image and get its rect.
-        self.image = pygame.image.load('alien_invasion/images/new_spaceship.bmp')  # Make sure this exists!
+        self.image = pygame.image.load(r'images/new_spaceship.bmp')
+  # Make sure this exists!
         self.rect = self.image.get_rect()
 
         # Start each new ship at the bottom center of the screen.
@@ -23,7 +24,7 @@ class Ship:
         self.moving_right = False
         self.moving_left = False
 
-    def update(self):
+    def update(self, dt):
         """Update the ship's position based on the movement flag."""
         #Update the ship's x value, not the rect.
         if self.moving_right and self.rect.right < self.screen_rect.right:
