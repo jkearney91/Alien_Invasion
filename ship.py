@@ -10,7 +10,9 @@ class Ship:
         self.settings = ai_game.settings
 
         # Load the ship image and get its rect.
-        self.image = pygame.image.load(r'images/new_spaceship.bmp')
+        self.image = pygame.image.load(r'images/falcon.bmp').convert_alpha()
+        self.image = pygame.transform.scale(self.image, (90, 90))
+        
   # Make sure this exists!
         self.rect = self.image.get_rect()
 
