@@ -27,8 +27,8 @@ class AlienInvasion:
         for _ in range(100):
             x = random.randint(0, self.settings.screen_width)
             y = random.randint(0, self.settings.screen_height)
-            brightness = random.randint(150, 255)
-            speed = random.uniform(0.3, 1.2)
+            brightness = random.randint(300, 600)
+            speed = random.uniform(1.0, 3.0)
             self.stars.append([x, y, brightness, speed])
 
         self.ship = Ship(self)
@@ -70,6 +70,7 @@ class AlienInvasion:
             if alien.check_edges():
                 self._change_fleet_direction()
                 break
+
     def _change_fleet_direction(self):
         """Drop the entire fleet and change fleets direction."""
         for alien in self.aliens.sprites():
